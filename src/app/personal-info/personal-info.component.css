@@ -1,0 +1,73 @@
+.personalInfo{
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+}
+
+.form-full-width{
+    width: 100%;
+}
+
+mat-card {
+    width: 80%;
+    margin-left: 10%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    margin-top: 1%;
+}
+.documentUpload h3{
+    color:#ee130b;
+}
+/* .documentUpload .mat-checkbox-layout{
+    padding-top: 20px;
+} */
+.button-show{
+    display: none;
+  }
+.btn-save{
+    background: #17a4de;
+}
+.btn-back{
+    background: #ee130b;
+}
+.button-sec button:not(:last-child){
+    margin-right: 10px;
+}
+.mat-stepper-horizontal-line{
+    flex: unset !important;
+}
+.mat-horizontal-stepper-header-container{
+    flex-wrap: wrap;
+}
+.mat-radio-button ~ .mat-radio-button {
+    margin-left: 16px;
+}
+.required:after {
+    content:" *";
+    color: red;
+}
+.ng-hide {
+    height: 0;
+    width: 0;
+    background-color: transparent;
+    top:-200px;
+    left: 200px;
+  }
+.doc-change-button{
+    margin-left: 10px;
+}
+.doc-delete-button{
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.button-hide{
+    display: none;
+}
+
+@media (max-width: 767px){
+    .button-sec button{
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

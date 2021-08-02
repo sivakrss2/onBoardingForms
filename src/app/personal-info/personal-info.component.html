@@ -1,0 +1,766 @@
+<div class="header-sec">   
+    <div class="container">
+        <div class="row">
+            <div class="col-5 logo-sec">
+                <img src="./assets/logo-02.png" class="img-fluid" alt="Logo">
+            </div>
+            <div class="col-7 tuv-sec">
+                <img src="./assets/tuv1.png" class="img-fluid" alt="TUV">
+                <img src="./assets/tuv2.png" class="img-fluid" alt="TUV">
+            </div>
+        </div>
+    </div>
+</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 form-header">
+        <mat-card>
+                <p>Hi <b>{{personal_info.first_name}} {{personal_info.last_name}}</b>.</p>
+                <p> Welcome to CG-VAK Onboarding System.</p>
+                <p>Congratulations, We’re delighted to welcome you to our team and look forward to have you onboard! To make your transition smooth, here are few details we require prior joining. </p>
+    <mat-vertical-stepper [linear]="isLinear" #stepper>
+        
+        <mat-step [stepControl]="personalInfo" label="Step 1" state="check" >
+        <form [formGroup]="personalInfo">
+            <ng-template matStepLabel><img src="./assets/info-new-01.png" class="img-fluid" alt="Personal Information"><h4>Personal Information</h4></ng-template>
+            <div class="row">
+                <!-- <div class="col-12 form-title">
+                    <h2>Personal Information</h2>
+                </div> -->
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="First Name" formControlName="first_name" [(ngModel)]="personal_info.first_name">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="Last Name" formControlName="last_name" [(ngModel)]="personal_info.last_name">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Contact Number</mat-label>
+                        <input type="text" matInput placeholder="Contact Number" formControlName="contact_number" [(ngModel)]="personal_info.contact_number">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Alternate Number</mat-label>
+                        <input type="text" matInput placeholder="Alternate Number" formControlName="alternate_number" [(ngModel)]="personal_info.alternate_number">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Father's Name</mat-label>
+                        <input matInput placeholder="Father's Name" formControlName="father_name" [(ngModel)]="personal_info.father_name">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Father's Contact Number</mat-label>
+                        <input type="text" matInput placeholder="Father's Contact Number" formControlName="father_contact_number" [(ngModel)]="personal_info.father_contact_number">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Mother's Name</mat-label>
+                        <input matInput placeholder="Mother's Name" formControlName="mother_name" [(ngModel)]="personal_info.mother_name">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Mother's Contact Number</mat-label>
+                        <input type="text" matInput placeholder="Mother's Contact Number" formControlName="mother_contact_number" [(ngModel)]="personal_info.mother_contact_number">
+                    </mat-form-field>
+                </div>
+                <!-- <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Spouse's Name</mat-label>
+                        <input matInput placeholder="Spouse's Name" formControlName="spouse_name">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Spouse's Contact Number</mat-label>
+                        <input type="text" matInput placeholder="Spouse's Contact Number" formControlName="spouse_contact_number">
+                    </mat-form-field>
+                </div> -->
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Present Address</mat-label>
+                        <textarea matInput formControlName="present_address" [(ngModel)]="personal_info.present_address"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Permanent Address</mat-label>
+                        <textarea matInput formControlName="permanent_address" [(ngModel)]="personal_info.permanent_address"></textarea>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Date of Birth</mat-label>
+                        <input matInput formControlName="date_of_birth" [matDatepicker]="date_of_birth" maxDate="max_date" [(ngModel)]="personal_info.date_of_birth">
+                        <mat-datepicker-toggle matSuffix [for]="date_of_birth"></mat-datepicker-toggle>
+                        <mat-datepicker #date_of_birth></mat-datepicker>
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Date of Joining</mat-label>
+                        <input matInput placeholder="date_of_join" formControlName="date_of_join" [(ngModel)]="personal_info.date_of_join" readonly>
+                        <!-- <input matInput formControlName="date_of_join" readonly [matDatepicker]="date_of_joining">
+                        <mat-datepicker-toggle matSuffix [for]="date_of_joining"></mat-datepicker-toggle>
+                        <mat-datepicker #date_of_joining></mat-datepicker> -->
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Blood Group</mat-label>
+                        <input matInput placeholder="Blood Group" formControlName="blood_group" [(ngModel)]="personal_info.blood_group">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>Email Address</mat-label>
+                        <input type="email" matInput placeholder="Email Address" formControlName="email"  [(ngModel)]="personal_info.email">
+                    </mat-form-field>
+                </div>
+                <!-- <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>PF No</mat-label>
+                        <input matInput placeholder="PF No" formControlName="pf_no">
+                    </mat-form-field>
+                </div> -->
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>UAN No</mat-label>
+                        <input matInput placeholder="UAN No" formControlName="uan_no" [(ngModel)]="personal_info.uan_no">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-6">
+                    <mat-form-field class="form-full-width">
+                        <mat-label>LandMark</mat-label>
+                        <input matInput formControlName="landmark" [(ngModel)]="personal_info.landmark">
+                    </mat-form-field>
+                </div>
+                <div class="col-md-12">
+                    <mat-radio-group aria-label="Select an option" formControlName="marital_status" [(ngModel)]="marital_status_value">
+                        <mat-radio-button (click)="open()" value=1>Married</mat-radio-button>
+                        <mat-radio-button (click)="close()" value=0>UnMarried</mat-radio-button>
+                      </mat-radio-group>
+                </div>
+                <div class="col-md-12" *ngIf="isShown">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <mat-form-field class="form-full-width">
+                                <mat-label>Spouse Name</mat-label>         
+                                <input matInput formControlName="spouse_name" [(ngModel)]="personal_info.spouse_name">  
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="form-full-width">
+                                <mat-label>Phone Number</mat-label>   
+                                <input type="text" matInput formControlName="spouse_contact_number" [(ngModel)]="personal_info.spouse_contact_number">  
+                            </mat-form-field>
+                        </div>
+                        <div class="col-md-4">
+                            <mat-form-field class="form-full-width">  
+                                <mat-label>DOB</mat-label>   
+                                 <input matInput formControlName="spouse_dob" [matDatepicker]="spouse_dob" [(ngModel)]="personal_info.spouse_dob">
+                                <mat-datepicker-toggle matSuffix [for]="spouse_dob"></mat-datepicker-toggle>
+                                <mat-datepicker #spouse_dob></mat-datepicker>
+                            </mat-form-field>
+                        </div>
+                   </div>
+         
+                    <div class="row"> 
+                        <div class="col-md-12"> 
+                            <button mat-fab color="accent" (click)="onAddChildDetails()">+</button>
+                            <div *ngFor="let childDetails of s1.controls; let i = index" class="list-group list-group-flush">
+                                <div [formGroup]="childDetails" class="row">
+                                    <div class="col-md-4">
+                                        <mat-form-field class="form-full-width">
+                                            <mat-label>Child Name</mat-label>         
+                                            <input matInput formControlName="child_name">  
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <mat-form-field class="form-full-width">
+                                            <mat-label>Gender</mat-label>   
+                                            <input matInput formControlName="child_gender">  
+                                        </mat-form-field>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <mat-form-field class="form-full-width">  
+                                            <mat-label>DOB</mat-label>   
+                                            <input matInput formControlName="child_dob" [matDatepicker]="child_dob">
+                                            <mat-datepicker-toggle matSuffix [for]="child_dob"></mat-datepicker-toggle>
+                                            <mat-datepicker #child_dob></mat-datepicker>
+                                        </mat-form-field>
+                                    </div>
+                                    <div *ngIf="this.s1.length > 1">
+                                        <button mat-fab color="warn" (click)="onRemoveChildDetails(i)">-</button>
+                                    </div>
+                                </div>
+                            </div> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div>
+            <div class="col-12 button-sec">
+                 <button type="button" mat-button matStepperNext [class.button-hide]="totalSubmitDisable" (click)="personalInfoSubmit()" [disabled]="!personalInfo.valid" class="btn-save">Save</button>
+                <button type="button" mat-button matStepperNext >Continue</button>
+            </div>
+            </div>
+        </form>
+        </mat-step>
+
+        <mat-step [stepControl]="personalReference">
+            <form [formGroup]="personalReference">
+            <ng-template matStepLabel><img src="./assets/personal-new-02.png" class="img-fluid" alt="Personal Reference"><h4>Personal Reference</h4></ng-template>
+            <!-- <mat-label>Personal Reference:</mat-label> -->
+            <!-- <div class="col-12 form-title">
+                <h2>Personal Reference:</h2>
+            </div> -->
+            <button mat-fab color="accent" (click)="onAddPersonalInformation()">+</button>
+                <div *ngFor="let personalInformation of t3.controls; let i = index" class="list-group list-group-flush">
+                    <div [formGroup]="personalInformation">
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Name" formControlName="name">                    
+                            <div *ngIf="personalInformationsubmitted && personalInformation.controls.name.errors" class="invalid-feedback">
+                                <div *ngIf="personalInformation.controls.name.errors.required">Name is required</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Designation</mat-label>
+                            <input matInput placeholder="Designation" formControlName="designation">
+                            <div *ngIf="personalInformationsubmitted && personalInformation.controls.designation.errors" class="invalid-feedback">
+                                <div *ngIf="personalInformation.controls.designation.errors.required">Designation is required</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Company Name</mat-label>
+                            <input matInput placeholder="Company Name" formControlName="company_name">
+                            <div *ngIf="personalInformationsubmitted && personalInformation.controls.company_name.errors" class="invalid-feedback">
+                                <div *ngIf="personalInformation.controls.company_name
+                                .errors.required">Company Name is required</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Ph No</mat-label>
+                            <input type="text" matInput placeholder="Phone Number" formControlName="phone_no">
+                            <div *ngIf="personalInformationsubmitted && personalInformation.controls.phone_no.errors" class="invalid-feedback">
+                                <div *ngIf="personalInformation.controls.phone_no
+                                .errors.required">Phone Number is required</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email">
+                            <div *ngIf="personalInformationsubmitted && personalInformation.controls.email.errors" class="invalid-feedback">
+                                <div *ngIf="personalInformation.controls.email.errors.required">Email is required</div>
+                                <div *ngIf="personalInformation.controls.email.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Relation</mat-label>
+                            <input matInput placeholder="Relation" formControlName="relation">
+                            <div *ngIf="personalInformationsubmitted && personalInformation.controls.relation.errors" class="invalid-feedback">
+                                <div *ngIf="personalInformation.controls.relation
+                                .errors.required">Relation is required</div>
+                            </div>
+                        </mat-form-field>
+                        <div *ngIf="this.t3.length > 1">
+                            <button mat-fab color="warn" (click)="onRemovePersonalInformation(i)">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 button-sec">
+                <button mat-button matStepperPrevious class="btn-back">Back</button>
+                <button type="button" mat-button matStepperNext [class.button-hide]="totalSubmitDisable" (click)="personalReferenceSubmit()" [disabled]="!personalReference.valid" class="btn-save">Save</button>
+                <button mat-button matStepperNext>Continue</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [stepControl]="professionalReference">
+            <form [formGroup]="professionalReference">
+            <ng-template matStepLabel><img src="./assets/professtional-new-03.png" class="img-fluid" alt="Professional Reference"><h4>Professional Reference</h4></ng-template>
+            <!-- <mat-label>Professional Reference:</mat-label> -->
+            <button mat-fab color="accent" (click)="onAddProfessionalInformation()">+</button>
+            <div *ngFor="let professionalInformation of t1.controls; let i = index" class="list-group list-group-flush">
+                    <div [formGroup]="professionalInformation">
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Name</mat-label>
+                            <input matInput placeholder="Name" formControlName="name">                    
+                            <div *ngIf="professionalInformationsubmitted && professionalInformation.controls.name.errors" class="invalid-feedback">
+                                <div *ngIf="professionalInformation.controls.name.errors.required">Name is required</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Designation</mat-label>
+                            <input matInput placeholder="Designation" formControlName="designation">
+                            <div *ngIf="professionalInformationsubmitted && professionalInformation.controls.designation.errors" class="invalid-feedback">
+                                <div *ngIf="professionalInformation.controls.designation.errors.required">Designation is required</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Company Name</mat-label>
+                            <input matInput placeholder="Company Name" formControlName="company_name">
+                            <div *ngIf="professionalInformationsubmitted && professionalInformation.controls.company_name.errors" class="invalid-feedback">
+                                <div *ngIf="professionalInformation.controls.company_name
+                                .errors.required">Company Name is required</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Ph No</mat-label>
+                            <input type="text" matInput placeholder="Phone Number" formControlName="phone_no">
+                            <div *ngIf="professionalInformationsubmitted && professionalInformation.controls.phone_no.errors" class="invalid-feedback">
+                                <div *ngIf="professionalInformation.controls.phone_no
+                                .errors.required">Phone Number is required</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Email</mat-label>
+                            <input matInput placeholder="Email" formControlName="email">
+                            <div *ngIf="professionalInformationsubmitted && professionalInformation.controls.email.errors" class="invalid-feedback">
+                                <div *ngIf="professionalInformation.controls.email.errors.required">Email is required</div>
+                                <div *ngIf="professionalInformation.controls.email.errors.email">Email must be a valid email address</div>
+                            </div>
+                        </mat-form-field>
+                        <mat-form-field class="form-full-width">
+                            <mat-label>Relation</mat-label>
+                            <input matInput placeholder="Relation" formControlName="relation">
+                            <div *ngIf="professionalInformationsubmitted && professionalInformation.controls.relation.errors" class="invalid-feedback">
+                                <div *ngIf="professionalInformation.controls.relation
+                                .errors.required">Relation is required</div>
+                            </div>
+                        </mat-form-field>
+                        <div *ngIf="this.t1.length > 1">
+                            <button mat-fab color="warn" (click)="onRemoveProfessionalInformation(i)">-</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 button-sec">
+                <button mat-button matStepperPrevious class="btn-back">Back</button>
+                <button type="button" mat-button [class.button-hide]="totalSubmitDisable" matStepperNext (click)="professionalReferenceSubmit()" [disabled]="!professionalReference.valid" class="btn-save">Save</button>
+                <button mat-button matStepperNext>Continue</button>
+                </div>
+            </form>
+        </mat-step>
+
+        <mat-step [formGroup]="previousCompanyInformation">
+            <form [formGroup]="previousCompanyInformation">
+                <ng-template matStepLabel><img src="./assets/prev-company-new-04.png" class="img-fluid" alt="Previous Company Information"><h4>Previous Company Information</h4></ng-template>
+                <!-- <mat-label>Previous Company:</mat-label> -->
+                <button mat-fab color="accent" (click)="onAddPreviousCompanyInformation()">+</button>
+                <div *ngFor="let previousCompanyInformation of t2.controls; let i = index" class="list-group list-group-flush">
+                    <mat-card class="previousCompanyInfo">
+                        <mat-card-content>
+                            <div [formGroup]="previousCompanyInformation">
+                                <table>
+                                    <tr>
+                                        <th></th>
+                                        <th>Name</th>
+                                        <th>Designation</th>
+                                        <th>Phone Number</th>
+                                        <th>Email</th>
+                                        <th></th>
+                                    </tr>
+                                    <tr>
+                                        <td>HR</td>
+                                        <td>
+                                            <mat-form-field class="form-full-width">
+                                                <input matInput placeholder="HR Name" formControlName="hr_name">                    
+                                                <div *ngIf="previousCompanyInformationsubmitted && previousCompanyInformation.controls.hr_name.errors" class="invalid-feedback">
+                                                    <div *ngIf="previousCompanyInformation.controls.hr_name.errors.required">Name is required</div>
+                                                </div>
+                                            </mat-form-field>
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="form-full-width">
+                                                <input matInput placeholder="Designation" formControlName="hr_designation">
+                                                <div *ngIf="previousCompanyInformationsubmitted && previousCompanyInformation.controls.hr_designation.errors" class="invalid-feedback">
+                                                    <div *ngIf="previousCompanyInformation.controls.hr_designation.errors.required">Description is required</div>
+                                                </div>
+                                            </mat-form-field>
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="form-full-width">
+                                                <input type="text" matInput placeholder="Phone Number" formControlName="hr_phone_no">
+                                                <div *ngIf="previousCompanyInformationsubmitted && previousCompanyInformation.controls.hr_phone_no.errors" class="invalid-feedback">
+                                                    <div *ngIf="previousCompanyInformation.controls.hr_phone_no.errors.required">Phone Number is required</div>
+                                                </div>
+                                            </mat-form-field>
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="form-full-width">
+                                                <input matInput placeholder="Email" formControlName="hr_email">
+                                                <div *ngIf="previousCompanyInformationsubmitted && previousCompanyInformation.controls.hr_email.errors" class="invalid-feedback">
+                                                    <div *ngIf="previousCompanyInformation.controls.hr_email.errors.required">Email is required</div>
+                                                    <div *ngIf="previousCompanyInformation.controls.hr_email.errors.email">Email must be a valid email address</div>
+                                                </div>
+                                            </mat-form-field>
+                                        </td>
+                                        <td rowspan="2">
+                                            <div *ngIf="this.t2.length > 1">
+                                                <button mat-fab color="warn" (click)="onRemovePreviousCompanyInformation(i)">-</button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reporting Authority</td>
+                                        <td>
+                                            <mat-form-field class="form-full-width">
+                                                <input matInput placeholder="Name" formControlName="ra_name">                    
+                                                <div *ngIf="previousCompanyInformationsubmitted && previousCompanyInformation.controls.ra_name.errors" class="invalid-feedback">
+                                                    <div *ngIf="previousCompanyInformation.controls.ra_name.errors.required">Name is required</div>
+                                                </div>
+                                            </mat-form-field>
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="form-full-width">
+                                                <input matInput placeholder="Designation" formControlName="ra_designation">
+                                                <div *ngIf="previousCompanyInformationsubmitted && previousCompanyInformation.controls.ra_designation.errors" class="invalid-feedback">
+                                                    <div *ngIf="previousCompanyInformation.controls.ra_designation.errors.required">Designation is required</div>
+                                                </div>
+                                            </mat-form-field>
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="form-full-width">
+                                                <input type="text" matInput placeholder="Phone Number" formControlName="ra_phone_no">
+                                                <div *ngIf="previousCompanyInformationsubmitted && previousCompanyInformation.controls.ra_phone_no.errors" class="invalid-feedback">
+                                                    <div *ngIf="previousCompanyInformation.controls.ra_phone_no.errors.required">Phone Number is required</div>
+                                                </div>
+                                            </mat-form-field>
+                                        </td>
+                                        <td>
+                                            <mat-form-field class="form-full-width">
+                                                <input matInput placeholder="Email" formControlName="ra_email">
+                                                <div *ngIf="previousCompanyInformationsubmitted && previousCompanyInformation.controls.ra_email.errors" class="invalid-feedback">
+                                                    <div *ngIf="previousCompanyInformation.controls.ra_email.errors.required">Email is required</div>
+                                                    <div *ngIf="previousCompanyInformation.controls.ra_email.errors.email">Email must be a valid email address</div>
+                                                </div>
+                                            </mat-form-field>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </mat-card-content>
+                    </mat-card>
+                    <br/>
+                </div>
+                <div>
+                    <div class="col-12 button-sec">
+                <button mat-button matStepperPrevious class="btn-back">Back</button>
+                <button type="button" mat-button [class.button-hide]="totalSubmitDisable" matStepperNext (click)="previousCompanyInformationSubmit()" [disabled]="!previousCompanyInformation.valid" class="btn-save">Save</button>
+                <button mat-button matStepperNext>Continue</button>
+                </div>
+                </div>
+            </form>
+        </mat-step>
+
+         <mat-step [stepControl]="documentUpload" class="document-upload-wrapper">
+            <form #myForm="ngForm" [formGroup]="documentUpload" class="documentUpload">
+            <ng-template matStepLabel><img src="./assets/upload-new-05.png" class="img-fluid" alt="Upload Documents"><h4>Upload Documents</h4></ng-template>
+            <div class="form-group">
+                <label for="joineePhoto" class="required"><b>Photo: </b></label>
+                <br>
+                <input
+                type="file"
+                #photo
+                [class.button-show]="photoShow"
+                id="joinee_photo"
+                name="photo"
+                formControlName="photo"
+                (change)="onFileSelected($event.target.files, 'photo')"
+                accept=".jpeg, .jpg, .png"
+                />
+                <div class="row">
+                    <div class="col-md-6" *ngIf="photoShow">
+                        <input type="text" disabled value="{{photo_name}}"> 
+                        <button  type="button" [class.button-hide]="totalSubmitDisable" class="btn btn-primary doc-change-button" (click)="photo.click()">Change</button>
+                    </div>  
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="joineeAadharCard" class="required"><b>Aadhar Card: </b></label>
+                <br>
+                <input
+                type="file"
+                #aadhar_card
+                [class.button-show]="aadharCardShow"
+                id="joinee_aadhar_card"
+                name="aadhar_card"
+                formControlName="aadhar_card"
+                (change)="onFileSelected($event.target.files, 'aadhar_card')"
+                accept=".jpeg, .jpg, .png, .doc, .docx, .pdf"
+                />
+                <div class="row">
+                    <div class="col-md-6" *ngIf="aadharCardShow">
+                        <input type="text" disabled value="{{aadharCard_name}}"> 
+                        <button  type="button" [class.button-hide]="totalSubmitDisable" class="btn btn-primary doc-change-button" (click)="aadhar_card.click()">Change</button>
+                    </div> 
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="joineePanCard"><b>PAN Card: </b></label>
+                        <br>
+                        <input
+                        type="file"
+                        #pan_card
+                        [class.button-show]="panCardShow"
+                        id="joinee_pan_card"
+                        name="pan_card"
+                        formControlName="pan_card"
+                        (change)="onFileSelected($event.target.files, 'pan_card')"
+                        accept=".jpeg, .jpg, .png, .doc, .docx, .pdf"
+                        />
+                        <div class="col-md-12" *ngIf="panCardShow">
+                            <input type="text" disabled value="{{panCard_name}}"> 
+                            <button  type="button" [class.button-hide]="totalSubmitDisable" class="btn btn-primary doc-change-button" (click)="pan_card.click()">Change</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-checkbox formControlName="pancard_check_box" name="pancard" [checked]="panCardCheckBox" (change)="pancardcheckbox($event)" class="check-box">Document Not available</mat-checkbox>
+                    </div>
+                    <div class="col-md-5" *ngIf="pancardreason">
+                        <mat-form-field class="form-full-width">
+                        <mat-label>Reason</mat-label>
+                        <textarea matInput formControlName="pancard_text_area" name="pancard_reason" [required]="pancard_reason_required" [(ngModel)]="pancardreasonInfo"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="joineePassport"><b>Passport: </b></label>
+                        <br>
+                        <input
+                        type="file"
+                        #passport
+                        [class.button-show]="passportShow"
+                        id="joinee_passport"
+                        name="passport"
+                        formControlName="passport"
+                        (change)="onFileSelected($event.target.files, 'passport')"
+                        accept=".jpeg, .jpg, .png, .doc, .docx, .pdf"
+                        />
+                        <div class="col-md-12" *ngIf="passportShow">
+                            <input type="text" disabled value="{{passport_name}}"> 
+                            <button  type="button" [class.button-hide]="totalSubmitDisable" class="btn btn-primary doc-change-button" (click)="passport.click()">Change</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-checkbox formControlName="passport_check_box" [checked]="passportCheckBox" (change)="passportcheckbox($event.checked)" class="check-box">Document Not available</mat-checkbox>
+                    </div>
+                    <div class="col-md-5" *ngIf="passportreason">
+                        <mat-form-field class="form-full-width">
+                        <mat-label>Reason</mat-label>
+                        <textarea matInput formControlName="passport_text_area" [(ngModel)]="passportreasonInfo"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="joineeForm16"><b>Form 16: </b></label>
+                        <br>
+                        <input
+                        type="file"
+                        #form16
+                        [class.button-show]="form16Show"
+                        id="joinee_form16"
+                        name="form16"
+                        formControlName="form_16"
+                        (change)="onFileSelected($event.target.files, 'form_16')"
+                        accept=".jpeg, .jpg, .png, .doc, .docx, .pdf"
+                        />
+                        <div class="col-md-12" *ngIf="form16Show">
+                            <input type="text" disabled value="{{form16_name}}"> 
+                            <button  type="button" [class.button-hide]="totalSubmitDisable" class="btn btn-primary doc-change-button" (click)="form16.click()">Change</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-checkbox formControlName="form16_check_box" [checked]="form16CheckBox" (change)="form16checkbox($event.checked)" class="check-box">Document Not available</mat-checkbox>
+                    </div>
+                    <div class="col-md-5" *ngIf="form16reason">
+                        <mat-form-field class="form-full-width">
+                        <mat-label>Reason</mat-label>
+                        <textarea matInput formControlName="form16_text_area" [(ngModel)]="form16reasonInfo"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <h3>* Select more than one file when browsing for files for the below uploading Documents.</h3>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="joineePayslip"><b>Payslips: </b></label>
+                        <br>
+                        <input
+                        type="file"
+                        #payslip
+                        id="joinee_payslip"
+                        name="payslip"
+                        formControlName="pay_slips"
+                        (change)="onFileSelected($event.target.files, 'pay_slips')"
+                        accept=".jpeg, .jpg, .png, .doc, .docx, .pdf"
+                        multiple
+                        />
+                        <div class="col-md-12" *ngFor="let data of paySlip_detail">
+                            <input type="text" disabled value="{{data.file_name}}"> 
+                            <button  type="button" class="btn btn-danger doc-delete-button" [class.button-hide]="totalSubmitDisable" (click)="deleteDocument(data.id)">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <mat-checkbox formControlName="payslip_check_box" [checked]="paySlipCheckBox" (change)="payslipcheckbox($event.checked)" class="check-box">Document Not available</mat-checkbox>
+                    </div>
+                    <div class="col-md-5" *ngIf="payslipreason">
+                        <mat-form-field class="form-full-width">
+                        <mat-label>Reason</mat-label>
+                        <textarea matInput formControlName="payslip_text_area" [(ngModel)]="paySlipreasonInfo"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="joineeSalaryCertificate"><b>Salary Certificate: </b></label>
+                        <br>
+                        <input
+                        type="file"
+                        #salary_certificate
+                        id="joinee_salary_certificate"
+                        name="salary_certificate"
+                        formControlName="salary_certificate"
+                        (change)="onFileSelected($event.target.files, 'salary_certificate')"
+                        accept=".jpeg, .jpg, .png, .doc, .docx, .pdf"
+                        multiple
+                        />
+                        <div class="col-md-12" *ngFor="let data of salary_Certificate">
+                            <input type="text" disabled value="{{data.file_name}}"> 
+                            <button  type="button" class="btn btn-danger doc-delete-button" [class.button-hide]="totalSubmitDisable" (click)="deleteDocument(data.id)">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3"><mat-checkbox formControlName="salary_certificate_check_box" [checked]="salaryCertidicateCheckBox" (change)="salarycertificatecheckbox($event.checked)" class="check-box">Document Not available</mat-checkbox></div>
+                    <div class="col-md-5" *ngIf="salarycertificatereason"><mat-form-field class="form-full-width">
+                        <mat-label>Reason</mat-label>
+                        <textarea matInput formControlName="salary_certificate_text_area" [(ngModel)]="salarycertificatereasonInfo"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="joineePreviousCompanyOfferLetter"><b>Previous Company Offer Letter: </b></label>
+                        <br>
+                        <input
+                        type="file"
+                        #previous_company_offer_letter
+                        id="joinee_previous_company_offer_letter"
+                        name="previous_company_offer_letter"
+                        formControlName="offer_letter"
+                        (change)="onFileSelected($event.target.files, 'offer_letter')"
+                        accept=".jpeg, .jpg, .png, .doc, .docx, .pdf"
+                        multiple
+                        />
+                        <div class="col-md-12" *ngFor="let data of offer_letter">
+                            <input type="text" disabled value="{{data.file_name}}"> 
+                            <button  type="button" class="btn btn-danger doc-delete-button" [class.button-hide]="totalSubmitDisable" (click)="deleteDocument(data.id)">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3"><mat-checkbox formControlName="offer_letter_check_box" [checked]="offerLetterCheckBox" (change)="offerlettercheckbox($event.checked)" class="check-box">Document Not available</mat-checkbox></div>
+                    <div class="col-md-5" *ngIf="offerletterreason"><mat-form-field class="form-full-width">
+                        <mat-label>Reason</mat-label>
+                        <textarea matInput formControlName="offer_letter_text_area" [(ngModel)]="offerletterreasonInfo"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="joineePreviousCompanyRelievingLetter"><b>Previous Company Relieving Letter: </b></label>
+                        <br>
+                        <input
+                        type="file"
+                        #previous_company_relieving_letter
+                        id="joinee_previous_company_relieving_letter"
+                        name="previous_company_relieving_letter"
+                        formControlName="relieve_letter"
+                        (change)="onFileSelected($event.target.files, 'relieve_letter')"
+                        accept=".jpeg, .jpg, .png, .doc, .docx, .pdf"
+                        multiple
+                        />
+                        <div class="col-md-12" *ngFor="let data of relieving_letter">
+                            <input type="text" disabled value="{{data.file_name}}"> 
+                            <button  type="button" class="btn btn-danger doc-delete-button" [class.button-hide]="totalSubmitDisable" (click)="deleteDocument(data.id)">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3"><mat-checkbox formControlName="relieve_letter_check_box" [checked]="reliveLetterCheckBox" (change)="relivelettercheckbox($event.checked)" class="check-box">Document Not available</mat-checkbox></div>
+                    <div class="col-md-5" *ngIf="reliveletterreason"><mat-form-field class="form-full-width">
+                        <mat-label>Reason</mat-label>
+                        <textarea matInput formControlName="relieve_letter_text_area" [(ngModel)]="relievingletterreasonInfo"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-md-4">
+                        <label for="joineePreviousCompanyExperienceLetter"><b>Previous Company Experience Letter: </b></label>
+                        <br>
+                        <input
+                        type="file"
+                        #previous_company_experience_letter
+                        id="joinee_previous_company_experience_letter"
+                        name="previous_company_experience_letter"
+                        formControlName="experience_letter"
+                        (change)="onFileSelected($event.target.files, 'experience_letter')"
+                        accept=".jpeg, .jpg, .png, .doc, .docx, .pdf"
+                        multiple
+                        />
+                        <div class="col-md-12" *ngFor="let data of experience_letter">
+                            <input type="text" disabled value="{{data.file_name}}"> 
+                            <button  type="button" class="btn btn-danger doc-delete-button" [class.button-hide]="totalSubmitDisable" (click)="deleteDocument(data.id)">Delete</button>
+                        </div>
+                    </div>
+                    <div class="col-md-3"><mat-checkbox formControlName="experience_letter_check_box" [checked]="experienceLetterCheckBox" (change)="experiencelettercheckbox($event.checked)" class="check-box">Document Not available</mat-checkbox></div>
+                    <div class="col-md-5" *ngIf="experienceletterreason"><mat-form-field class="form-full-width">
+                        <mat-label>Reason</mat-label>
+                        <textarea matInput formControlName="experience_letter_text_area" [(ngModel)]="experienceletterreasonInfo"></textarea>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 button-sec">
+                <button mat-button matStepperPrevious class="btn-back">Back</button> 
+                <button type="button" mat-button matStepperNext [class.button-hide]="totalSubmitDisable" (click)="documentUploadSubmit( )" [disabled]="!uploadValue " class="btn-save">Save</button>
+                <button mat-button matStepperNext [class.button-hide]="totalSubmitDisable" [disabled]="submitDisable" (click)="UploadAllDetails()">Submit</button>
+                </div>
+            </form>
+        </mat-step>
+        <ng-template matStepperIcon="check">
+            <mat-icon>check_circle_outline</mat-icon>
+        </ng-template>
+        <ng-template matStepperIcon="chat">
+            <mat-icon>forum</mat-icon>
+        </ng-template>
+
+    </mat-vertical-stepper>
+</mat-card>
+</div>
+</div>
+</div>

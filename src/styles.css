@@ -1,0 +1,177 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* html, body { height: 100%; } */
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; background: url('./assets/login.jpg') top center no-repeat; background-size: cover; position: relative;}
+body:before {    position: absolute;    content: "";    width: 100%;    height: 100%;    top: 0%;    left: 0;    background: rgb(69 64 61 / 0.7);   z-index: 0;}
+.header-sec { padding: 25px 0 150px; }
+.mat-horizontal-stepper-header { height: auto !important; }
+.mat-stepper-horizontal-line { border: none !important; height: auto !important; margin: 0 15px !important; }
+.mat-stepper-horizontal-line::before { content: ""; background: url('./assets/arrow.png'); width: 71px; height: 60px; display: inline-block; }
+.mat-input-element, textarea.mat-input-element { border-bottom:1px solid #48403d !important; padding: 15px !important; border-radius: 0px; }
+textarea.mat-input-element { height: 100px; }
+.mat-form-field-appearance-legacy .mat-form-field-label { padding: 15px; }
+.mat-form-field-appearance-legacy.mat-form-field-can-float.mat-form-field-should-float .mat-form-field-label, .mat-form-field-appearance-legacy.mat-form-field-can-float .mat-input-server:focus+.mat-form-field-label-wrapper .mat-form-field-label { transform: translateY(-25px) scale(0.75) perspective(100px) translateZ(0.001px); -ms-transform: translateY(-25px) scale(0.75); }
+.mat-form-field-appearance-legacy .mat-form-field-underline { display: none; }
+.tuv-sec { text-align: right; }
+.tuv-sec img:first-child { margin-right: 15px; }
+.form-header p { font-family: Roboto, sans-serif; font-size: 14px; color: #3c4858; text-align: center; margin-bottom: 25px; }
+.mat-card { padding: 50px 15px !important; border-radius: 10px !important; margin: 0 auto 150px !important; display: block !important; width: 100% !important;    background: rgba(255,255,255,0.7); }
+.mat-form-field { display: block !important; }
+.mat-form-field-appearance-fill .mat-form-field-underline::before { background-color: transparent; height: 0; }
+.form-title h2 { font-family: Roboto, sans-serif; font-weight: bold; font-size: 20px; color: #3c4858; margin: 35px 0 0; text-transform: uppercase; }
+.mat-horizontal-stepper-header { overflow: visible !important; text-align: center; }
+.button-sec { text-align: right; padding: 0; margin-top: 25px; }
+.button-sec button { display: inline-block; background-color: #48403d; color: #fff !important; font-family: Roboto, sans-serif; font-size: 14px; text-transform: uppercase; padding: 5px 50px; }
+.mat-step-label h4 { font-family: Roboto, sans-serif; font-size: 18px; margin-top: 15px; color: #000; }
+.mat-horizontal-stepper-header { display: inline-block !important; }
+.mat-form-field-prefix, .mat-form-field-suffix { position: absolute !important; top: 50%; right: 15px; transform: translateY(-50%); }
+.mat-horizontal-stepper-header .mat-step-icon { display: none; }
+.mat-horizontal-stepper-header-container{
+    flex-wrap: wrap;
+}
+.mat-step-label-selected h4.ng-star-inserted{
+    color: #666;
+}
+body .mat-stepper-horizontal, body .mat-stepper-vertical{
+	background: transparent;
+}
+.documentUpload .mat-checkbox-layout {
+    padding-top: 20px;
+}
+.mat-card.previousCompanyInfo{
+	margin-bottom: 0 !important;
+}
+.mat-stepper-horizontal-line{
+	flex: inherit !important;
+}
+.mat-vertical-stepper-header{
+	height: auto !important;
+}
+.mat-step-icon{
+	display: none !important;
+}
+.mat-step-header .mat-step-label img{
+	max-width: 60px;
+	margin-right: 10px;
+}
+.mat-step-header{
+	padding-left: 5px !important;
+}
+.mat-step-header .mat-step-label{
+	display: flex;
+}
+
+.mat-fab.mat-warn{
+  background-color: #48403d;
+}
+
+.notfound .notfound-404 h1 {
+	font: 900 230px/280px 'Roboto', sans-serif;
+	margin: 0px;
+	position: absolute;
+	left: 50%;
+	-webkit-transform: translateX(-50%);
+		-ms-transform: translateX(-50%);
+			transform: translateX(-50%);
+	background: url('./assets/bg.jpg') no-repeat;
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+	background-size: cover;
+	background-position: center;
+  }
+
+  .mr5{
+    padding: 6px 12px;
+    font: 16px;
+    color: #fff;
+}
+.mat-step-header .mat-step-label { width: 100%; padding: 15px; }
+.mat-step-header:hover .mat-step-label { background-color: #eee; }
+.mat-step-header[aria-selected="true"] .mat-step-label.mat-step-label-active { background-color: rgb(255 255 255 / .2); }
+.mat-step-header.cdk-keyboard-focused, .mat-step-header.cdk-program-focused, .mat-step-header:hover, .mat-step-header:hover { background-color: transparent; }
+
+/* .mat-input-element::placeholder, .mat-input-element label  { font-size: 20px;} */
+@media (max-width: 1300px) {
+	.mat-horizontal-stepper-header-container { display: block !important; white-space: normal !important; }
+	.mat-horizontal-stepper-header { padding: 0 15px !important; }
+	.mat-stepper-horizontal-line { display: inline-block !important; max-width: 50%; }
+	.mat-step-header img { max-width: 50%; }
+	.mat-stepper-horizontal-line { position: relative; bottom: 25px; color: #ea222a; }
+	.mat-stepper-horizontal-line::before { content: "&#8594;"; background: none; }
+	.mat-stepper-horizontal-line:before, .mat-stepper-horizontal-line:after {
+	    border-right: 2px solid;
+	    content: '';
+	    display: block;
+	    height: 8px;
+	    margin-top: -6px;
+	    position: absolute;
+	    -moz-transform: rotate(135deg);
+	    -o-transform: rotate(135deg);
+	    -webkit-transform: rotate(135deg);
+	    transform: rotate(135deg);
+	    right: 15px;
+	    top:0;
+	    width: 0;
+	}
+
+	.mat-stepper-horizontal-line:after {
+	    margin-top: -1px;
+	    -moz-transform: rotate(45deg);
+	    -o-transform: rotate(45deg);
+	    -webkit-transform: rotate(45deg);
+	    transform: rotate(45deg);
+	}
+}
+body .mat-stepper-vertical-line::before{
+	display: none;
+}
+body .mat-vertical-content-container{
+	margin-left: 0 !important;
+}
+.mat-form-field-appearance-legacy .mat-form-field-label {
+	color: #48403d;
+    font-size: 16px;
+    top: 30px;
+}
+body .mat-fab.mat-accent{
+	background-color:  #48403d;;
+}
+.mat-form-field-appearance-legacy .mat-form-field-infix {
+    padding: 20px 12px;
+}
+.mat-radio-group{
+	padding: 0px 15px;
+}
+body .btn-save {
+	background: #72543C !important;
+}
+body .btn-back {
+    background: #C69C6C !important;
+}
+.mat-card.previousCompanyInfo{
+	background: transparent !important;
+	box-shadow: none;
+}
+table{
+	width: 100%;
+}
+.documentUpload  .btn-primary {
+    background-color: #333;
+    border-color: #333;
+}
+.documentUpload input, .document-upload-wrapper input{
+	height: 40px;
+	padding: 10px;
+}
+.document-upload-wrapper label{
+	color: #48403d;
+}
+.mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle {
+    border-color: #6A6159;
+}
+.mat-radio-button.mat-accent .mat-radio-inner-circle, .mat-radio-button.mat-accent .mat-radio-ripple .mat-ripple-element:not(.mat-radio-persistent-ripple), .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-persistent-ripple, .mat-radio-button.mat-accent:active .mat-radio-persistent-ripple {
+    background-color: #6A6159;
+}
+.mat-checkbox-checked.mat-accent .mat-checkbox-background {
+    background-color: #6A6159;
+}
